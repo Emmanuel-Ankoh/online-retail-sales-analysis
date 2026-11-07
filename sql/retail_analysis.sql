@@ -41,3 +41,16 @@ FROM (
       AND UnitPrice > 0
     GROUP BY InvoiceNo
 );
+
+SELECT
+    StockCode,
+    Description,
+    SUM(Quantity * UnitPrice) AS TotalRevenue
+FROM online_retail
+WHERE InvoiceNo NOT LIKE 'C%'
+  AND Quantity > 0
+  AND UnitPrice > 0
+  AND Description IS NOT NULL
+GROUP BY StockCode, Description
+ORDER BY TotalRevenue DESC
+LIMIT 5;
