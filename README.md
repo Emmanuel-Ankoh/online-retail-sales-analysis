@@ -107,11 +107,26 @@ Future updates will introduce aggregation, grouped analysis, data-quality checks
 
 We will add results and conclusions after executing queries and validating them against the dataset.
 
-## Key Findings
 
-Findings will be documented here as the analysis progresses.
+## Key Findings: Top 5 by Revenue
 
-No numerical results or business conclusions will be reported until they are verified using the actual dataset.
+Using SQL aggregation, I identified the five entries with the highest recorded revenue in the Online Retail dataset.
+
+| Rank | StockCode | Description | Total Revenue |
+|---:|---|---|---:|
+| 1 | DOT | DOTCOM POSTAGE | 115,108.00 |
+| 2 | 22423 | REGENCY CAKESTAND 3 TIER | 87,430.16 |
+| 3 | 85123A | WHITE HANGING HEART T-LIGHT HOLDER | 57,557.55 |
+| 4 | 85099B | JUMBO BAG RED RETROSPOT | 47,307.38 |
+| 5 | POST | POSTAGE | 45,006.43 |
+
+### Business Insights
+
+- Postage-related entries occupy two positions in the top five, suggesting that delivery charges should be separated from merchandise sales when evaluating product performance.
+- The Regency Cake stand is the highest-revenue physical product in this top-five list.
+- This analysis demonstrates the use of `SUM()`, `GROUP BY`, `ORDER BY`, and `LIMIT` to aggregate and rank retail transaction data.
+
+*Note: Revenue values reflect the query's filters and are reported in the dataset's monetary units. Postage-related entries are not physical products.*
 
 ## Future Improvements
 
