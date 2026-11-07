@@ -25,3 +25,19 @@ WHERE InvoiceNo NOT LIKE 'C%'
 GROUP BY Country
 ORDER BY TotalRevenue DESC
 LIMIT 10;
+
+-- Query 4: Calculate Average Order Value
+-- Purpose: Estimate the average value per qualifying invoice.
+
+SELECT
+    AVG(OrderValue) AS AverageOrderValue
+FROM (
+    SELECT
+        InvoiceNo,
+        SUM(Quantity * UnitPrice) AS OrderValue
+    FROM online_retail
+    WHERE InvoiceNo NOT LIKE 'C%'
+      AND Quantity > 0
+      AND UnitPrice > 0
+    GROUP BY InvoiceNo
+);
