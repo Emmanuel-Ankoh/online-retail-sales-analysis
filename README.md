@@ -27,7 +27,7 @@ This portfolio project is part of my continuous development in data analytics, b
 
 The dataset contains transactions from a UK-based online retail business recorded between December 2010 and December 2011.
 
-The data includes information such as invoice numbers, product descriptions, quantities, transaction dates, unit prices, customer identifiers, and countries.
+The data includes information such as invoice numbers, stockcode, descriptions, quantities, invoice dates, unit prices, customer identifiers, and countries.
 
 The dataset is used for educational and portfolio purposes.
 
