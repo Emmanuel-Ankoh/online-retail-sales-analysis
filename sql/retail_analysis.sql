@@ -54,3 +54,21 @@ WHERE InvoiceNo NOT LIKE 'C%'
 GROUP BY StockCode, Description
 ORDER BY TotalRevenue DESC
 LIMIT 5;
+
+
+-- Query 6: Top 10 Physical Merchandise Products by Revenue
+-- Purpose: Identify physical products generating the highest total revenue.
+
+SELECT
+    StockCode,
+    Description,
+    SUM(Quantity * UnitPrice) AS TotalRevenue
+FROM online_retail
+WHERE InvoiceNo NOT LIKE 'C%'
+  AND Quantity > 0
+  AND UnitPrice > 0
+  AND Description IS NOT NULL
+  AND StockCode NOT IN ('DOT', 'POST')
+GROUP BY StockCode, Description
+ORDER BY TotalRevenue DESC
+LIMIT 10;
