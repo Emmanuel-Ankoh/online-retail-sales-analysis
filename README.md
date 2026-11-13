@@ -128,6 +128,33 @@ Using SQL aggregation, I identified the five entries with the highest recorded r
 
 *Note: Revenue values reflect the query's filters and are reported in the dataset's monetary units. Postage-related entries are not physical products.*
 
+
+## Top 10 Products by Revenue
+
+I used SQL aggregation to identify the ten highest-revenue entries after excluding cancellation invoices, non-positive quantities and prices, missing descriptions, and the postage-related stock codes `DOT` and `POST`.
+
+| Rank | StockCode | Description | Total Revenue |
+|---:|---|---|---:|
+| 1 | 22423 | REGENCY CAKESTAND 3 TIER | 87,430.16 |
+| 2 | 85123A | WHITE HANGING HEART T-LIGHT HOLDER | 57,557.55 |
+| 3 | 85099B | JUMBO BAG RED RETROSPOT | 47,307.38 |
+| 4 | 47566 | PARTY BUNTING | 44,368.66 |
+| 5 | 23084 | RABBIT NIGHT LIGHT | 43,602.93 |
+| 6 | M | Manual | 36,551.08 |
+| 7 | 22086 | PAPER CHAIN KIT 50'S CHRISTMAS | 36,010.91 |
+| 8 | 84879 | ASSORTED COLOUR BIRD ORNAMENT | 32,135.24 |
+| 9 | 79321 | CHILLI LIGHTS | 27,785.22 |
+| 10 | 22386 | JUMBO BAG PINK POLKADOT | 22,126.17 |
+
+### Key Insights
+
+- The Regency Cake stand recorded the highest revenue among the entries returned by the query.
+- Home decorations, lighting products, and gift items feature prominently in the results.
+- The `Manual` stock code requires further investigation before the ranking can be treated as a list of physical merchandise only.
+- This analysis demonstrates the use of `SUM()`, `GROUP BY`, `ORDER BY`, and `LIMIT` to aggregate and rank transaction data.
+
+*Note: Revenue values reflect the query filters and are expressed in the dataset's monetary units. The results have not been independently reconciled against accounting records.*
+
 ## Future Improvements
 
 - Complete a broader set of retail analysis questions.
